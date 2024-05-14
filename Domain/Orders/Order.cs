@@ -25,7 +25,7 @@ public class Order
     public void Add(Product product)
     {
         var lineItem = new LineItem(
-            Guid.NewGuid(),
+            new LineItemId(Guid.NewGuid()),
             Id,
             product.Id,
             product.Price
