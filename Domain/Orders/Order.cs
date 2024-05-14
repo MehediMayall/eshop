@@ -7,6 +7,8 @@ public class Order
 {
     private Order() {}
     private readonly HashSet<LineItem> lineItems = new();
+
+    public IReadOnlyList<LineItem> LineItems => lineItems.ToList();
     public OrderId  Id { get; private set; }
 
     public CustomerId CustomerId { get; private set; }
@@ -24,7 +26,7 @@ public class Order
 
     public void Add(Product product)
     {
-        var lineItem = new LineItem(
+        var lineItem = LineItem.Create(
             new LineItemId(Guid.NewGuid()),
             Id,
             product.Id,

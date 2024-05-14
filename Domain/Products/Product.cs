@@ -7,5 +7,5 @@ public class Product
 
     public Money Price { get; private set; }
 
-    public Sku sku{ get; private set; }
+    public SKU Sku{ get; private set; }
 }
